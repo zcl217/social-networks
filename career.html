@@ -15,6 +15,25 @@
 
     <!-- Custom styles for this template -->
     <link href="css/styles.css" rel="stylesheet">
+	
+	<style>
+		ul{
+			list-style-type: none;
+		}
+		
+		h3{
+			text-decoration: underline;
+		}
+		
+		h3:hover{
+			cursor: pointer;
+		}
+		
+		.list-group-item:hover{
+			cursor: pointer;
+		}
+		
+	</style>
 
   </head>
 
@@ -51,15 +70,15 @@
     <div class="container">
 
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Sidebar Page
-        <small>Subheading</small>
+      <h1 class="mt-4 mb-3">Careers:
+        <small>Jumpstart your CS education career today</small>
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="index.html">Home</a>
         </li>
-        <li class="breadcrumb-item active">About</li>
+        <li class="breadcrumb-item active">Careers</li>
       </ol>
 
       <!-- Content Row -->
@@ -67,29 +86,62 @@
         <!-- Sidebar Column -->
         <div class="col-lg-3 mb-4">
           <div class="list-group">
-            <a href="index.html" class="list-group-item">Home</a>
-            <a href="about.html" class="list-group-item">About</a>
-            <a href="services.html" class="list-group-item">Services</a>
-            <a href="contact.html" class="list-group-item">Contact</a>
-            <a href="portfolio-1-col.html" class="list-group-item">1 Column Portfolio</a>
-            <a href="portfolio-2-col.html" class="list-group-item">2 Column Portfolio</a>
-            <a href="portfolio-3-col.html" class="list-group-item">3 Column Portfolio</a>
-            <a href="portfolio-4-col.html" class="list-group-item">4 Column Portfolio</a>
-            <a href="portfolio-item.html" class="list-group-item">Single Portfolio Item</a>
-            <a href="blog-home-1.html" class="list-group-item">Blog Home 1</a>
-            <a href="blog-home-2.html" class="list-group-item">Blog Home 2</a>
-            <a href="blog-post.html" class="list-group-item">Blog Post</a>
-            <a href="full-width.html" class="list-group-item">Full Width Page</a>
-            <a href="sidebar.html" class="list-group-item active">Sidebar Page</a>
-            <a href="faq.html" class="list-group-item">FAQ</a>
-            <a href="404.html" class="list-group-item">404</a>
-            <a href="pricing.html" class="list-group-item">Pricing Table</a>
+            <span class="list-group-item" onclick="sortDate()">Sort by date posted </span>
+            <span class="list-group-item" onclick="sortDistance()">Sort by distance (closest) </span>
+            <span class="list-group-item" onclick="sortSalary()">Sort by salary (highest) </span>
           </div>
         </div>
         <!-- Content Column -->
         <div class="col-lg-9 mb-4">
-          <h2>Section Heading</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
+          <h2>Opportunities and Connections</h2>
+          <p>Besides already existing positions, a variety of the schools listed here also hope to create a new CS program at their school, ensuring that every possible teaching opportuntiy is available for your consideration. 
+		  <br>
+		  <b>(clicking the school name should redirect to their school homepage but is disabled for the sake of demo purposes)</b></p>
+		  
+			<ul id = "jobList">
+				  
+				<li>
+					<h3>Belos School of Arts</h3>
+					<p>We currently have a position open for a motivated teacher for our upcoming AP Computer Science A progam! No prior teaching experience is required!</p>
+					<p> Salary: $<span class = "salary">20</span> per hour</p>
+					<p> Location: Belos (<span class = "distance">15</span> miles away) </p>
+					<p> Date posted: <span class = "date">2017-12-09</span> </p>
+				</li>
+				
+				<li>
+					<h3>Aoich School of Engineering</h3>
+					<p>Currently searching for an experienced, motivated teacher to teach a class of top robotics students. <b>Requirements: Bachelors degree in a STEM field and 5 years of prior high school teaching experience</b></p>
+					<p> Salary: $<span class = "salary">45</span> per hour</p>
+					<p> Location: Aoich (<span class = "distance">8</span> miles away) </p>
+					<p> Date posted: <span class = "date">2017-11-15</span> </p>
+				</li>
+				
+				<li>
+					<h3>Ves High School</h3>
+					<p>With the rise of technology, an education in computer science has never been more important. Realizing this, our school is hoping to create a computer science program of our own. We are currently searching for a teacher to help create a computer science program at our school. This is a great chance to become part of a huge change. <b>Requirements: Bachelors Degree</b></p>
+					<p> Salary: $<span class = "salary">30</span> per hour</p>
+					<p> Location: Elfa (<span class = "distance">10</span> miles away) </p>
+					<p> Date posted: <span class = "date">2017-9-29</span> </p>
+				</li>
+				
+				<li>
+					<h3>Midgard East High School</h3>
+					<p>Teachers at this school are committed to the success of their students and their tasks of college prep. While computer science courses and respective electives already exist, motivated teachers are encouraged to revise the syllabus and course to best fit the needs of the students. <b>Requirements: Bachelors degree in an education field and 2 years of prior teaching experience</b></p>
+					<p> Salary: $<span class = "salary">30</span> per hour</p>
+					<p> Location: Bifrost (<span class = "distance">12</span> miles away) </p>
+					<p> Date posted: <span class = "date">2017-8-02</span> </p>
+				</li>
+				
+				<li>
+					<h3>Long Jing School</h3>
+					<p>Seeking a teacher to help implement a middle school level intro to computer science course. Bachelors degree in an education field preferred. </p>
+					<p> Salary: $<span class = "salary">15</span> per hour</p>
+					<p> Location: Long Jing (<span class = "distance">5</span> miles away) </p>
+					<p> Date posted: <span class = "date">2017-7-06</span> </p>
+				</li>
+				
+				
+			</ul>
         </div>
       </div>
       <!-- /.row -->
@@ -109,6 +161,119 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+	
+	<script>
+	//edited script from w3 schools sort function
+		function sortSalary() {
+		  var list, i, switching, b, shouldSwitch, c;
+		  list = document.getElementById("jobList");
+		  switching = true;
+		  /*Make a loop that will continue until
+		  no switching has been done:*/
+		  while (switching) {
+			//start by saying: no switching is done:
+			switching = false;
+			b = list.getElementsByTagName("LI");
+			c = list.getElementsByClassName("salary");
+			//Loop through all list-items:
+			for (i = 0; i < (b.length - 1); i++) {
+			  //start by saying there should be no switching:
+			  shouldSwitch = false;
+			  /*check if the next item should
+			  switch place with the current item:*/
+			  if (parseInt(c[i].innerHTML) < parseInt(c[i + 1].innerHTML)) {
+
+				/*if next item is alphabetically
+				lower than current item, mark as a switch
+				and break the loop:*/
+				shouldSwitch= true;
+				break;
+			  }
+			}
+			if (shouldSwitch) {
+			  /*If a switch has been marked, make the switch
+			  and mark the switch as done:*/
+			  b[i].parentNode.insertBefore(b[i + 1], b[i]);
+			  switching = true;
+			}
+		  }
+		}
+		
+		function sortDistance() {
+		  var list, i, switching, b, shouldSwitch, c;
+		  list = document.getElementById("jobList");
+		  switching = true;
+		  /*Make a loop that will continue until
+		  no switching has been done:*/
+		  while (switching) {
+			//start by saying: no switching is done:
+			switching = false;
+			b = list.getElementsByTagName("LI");
+			c = list.getElementsByClassName("distance");
+			//Loop through all list-items:
+			for (i = 0; i < (b.length - 1); i++) {
+			  //start by saying there should be no switching:
+			  shouldSwitch = false;
+			  /*check if the next item should
+			  switch place with the current item:*/
+			  if (parseInt(c[i].innerHTML) > parseInt(c[i + 1].innerHTML)) {
+
+				/*if next item is alphabetically
+				lower than current item, mark as a switch
+				and break the loop:*/
+				shouldSwitch= true;
+				break;
+			  }
+			}
+			if (shouldSwitch) {
+			  /*If a switch has been marked, make the switch
+			  and mark the switch as done:*/
+			  b[i].parentNode.insertBefore(b[i + 1], b[i]);
+			  switching = true;
+			}
+		  }
+		}
+		
+		function sortDate() {
+		  var list, i, switching, b, shouldSwitch, c, dateSplitter;
+		  list = document.getElementById("jobList");
+		  switching = true;
+		  /*Make a loop that will continue until
+		  no switching has been done:*/
+		  while (switching) {
+			//start by saying: no switching is done:
+			switching = false;
+			b = list.getElementsByTagName("LI");
+			c = list.getElementsByClassName("date");
+			//Loop through all list-items:
+			for (i = 0; i < (b.length - 1); i++) {
+			  //start by saying there should be no switching:
+			  shouldSwitch = false;
+			  /*check if the next item should
+			  switch place with the current item:*/
+			  
+			  dateSplitter = c[i].innerHTML.split("-");
+			  var d1 = new Date(dateSplitter[0], dateSplitter[1], dateSplitter[2]);
+			  dateSplitter = c[i+1].innerHTML.split("-");
+			  var d2 = new Date(dateSplitter[0], dateSplitter[1], dateSplitter[2]);
+			  if (d1 < d2) {
+
+				/*if next item is alphabetically
+				lower than current item, mark as a switch
+				and break the loop:*/
+				shouldSwitch= true;
+				break;
+			  }
+			}
+			if (shouldSwitch) {
+			  /*If a switch has been marked, make the switch
+			  and mark the switch as done:*/
+			  b[i].parentNode.insertBefore(b[i + 1], b[i]);
+			  switching = true;
+			}
+		  }
+		}
+	</script>
   </body>
 
 </html>
